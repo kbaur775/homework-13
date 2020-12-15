@@ -1,14 +1,14 @@
 const orm = require("../config/orm.js");
 
 var burger = {
-    selectAll: function () {
-        return orm.selectAll();
+    selectAll: function (callback) {
+        return orm.selectAll(callback);
     },
-    insertOne: function (name) {
-        orm.insertOne(name);
+    insertOne: function (name, callback) {
+        orm.insertOne(name, callback);
     },
-    updateOne: function (id) {
-        orm.updateOne(id);
+    updateOne: function (id, callback) {
+        orm.updateOne(id, callback);
     }
 }
 
