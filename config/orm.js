@@ -3,7 +3,7 @@ const connection = require("./connection.js");
 const orm = {};
 
 orm.selectAll = function (callback) {
-    var query = "SELECT * FROM burgers_db.burgers;";
+    var query = "SELECT * FROM burgers;";
     connection.query(query, function (err, result) {
       if (err) throw err;
       console.log(result)
@@ -13,7 +13,7 @@ orm.selectAll = function (callback) {
 
 
 orm.insertOne = function (name, callback) {
-    var query = "INSERT INTO burgers_db.burgers (burger_name) values (\"" + name + "\");";
+    var query = "INSERT INTO burgers (burger_name) values (\"" + name + "\");";
     connection.query(query, function (err, result) {
       if (err) throw err;
       console.log(result);
@@ -23,7 +23,7 @@ orm.insertOne = function (name, callback) {
 
 
 orm.updateOne = function (id, callback) {
-    var query = "UPDATE burgers_db.burgers SET devoured = 1 WHERE id =" + id +  ";";
+    var query = "UPDATE burgers SET devoured = 1 WHERE id =" + id +  ";";
     connection.query(query, function (err, result) {
         if (err) throw err;
         console.log(result);
